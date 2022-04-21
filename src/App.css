@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+color: rgb(68, 0, 255);
 }
 
 .App-logo {
@@ -40,6 +46,11 @@
 body {
   background-color: #cdd3d4;
 }
+main {
+  max-width: 1024px;
+  display: flex;
+  margin: 0 auto;
+}
 
 .nav {
   background-color: aqua;
@@ -47,4 +58,18 @@ body {
 
 ul {
   list-style-type: none;
+  max-width: 800px;
+  max-height: 30px;
+  align-items: center;
 }
+
+@media only screen and (min-width: 768px) {
+  .App {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* .Articles {
+  display: flex;
+} */
