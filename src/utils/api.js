@@ -15,3 +15,14 @@ export const getTopics = () => {
 		return data.topics;
 	});
 };
+
+export const getArticlesByTopics = (topic) => {
+	return articlesApi
+		.get(`/articles`, {
+			params: { topic },
+		})
+		.then(({ data }) => {
+			return data.articles;
+		});
+};
+  
