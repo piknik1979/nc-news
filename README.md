@@ -27,11 +27,17 @@ Node v17.0.0 or higher is recommended on your development machine to work with t
 ###  Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/piknik1979/piknik-news-fe
-   ``` 
+  ```
+  git clone https://github.com/piknik1979/piknik-news-fe
+  ``` 
 2. Install NPM packages
-   ```sh
-   npm install
-   ```
+  ```
+  npm install
+  ```
+###  Running the Project Locally
+  ```
+  npm start
+  ```
+
+   
 <p align="right">(<a href="#top">back to top</a>)</p>
