@@ -1,30 +1,12 @@
+# Piknik news
 <br />
+
 <div align="center">
-<h3 align="center">Piknik News</h3>
+
   <p align="center">
     <a href="">View Demo</a>
   </p>
 </div>
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-  </ol>
-</details>
-<!-- ABOUT THE PROJECT -->
 
 ## About The Project
 This project is the front-end component to a news website that allows posting and deleting comments, voting for favourite comments and articles, and filtering articles by topic.
