@@ -1,6 +1,6 @@
 # Piknik news
 <br />
-
+-- PLEASE NOTE THIS PROJECT IS STILL A WORK IN PROGRESS --
 <div align="center">
 
   <p align="center">
