@@ -4,12 +4,6 @@ const articlesApi = axios.create({
   baseURL: "https://news-api-j.herokuapp.com/api",
 });
 
-export const getTopics = () => {
-  return articlesApi.get("/topics").then(({ data }) => {
-    return data.topics;
-  });
-};
-
 export const getArticles = (topic, filter, order) => {
   return articlesApi
     .get(`/articles`, {
@@ -23,13 +17,20 @@ export const getArticles = (topic, filter, order) => {
       return data.articles;
     });
 };
+
+export const getTopics = () => {
+  return articlesApi.get("/topics").then(({ data }) => {
+    return data.topics;
+  });
+};
+
 export const getArticleById = (article_id) => {
   return articlesApi.get(`/articles/${article_id}`).then(({ data }) => {
     return data.article;
   });
 };
 
-export const patchIncDecVote = (article_id, voteClickNum) => {
+export const changeVote = (article_id, voteClickNum) => {
   return articlesApi.patch(`/articles/${article_id}`, {
     inc_votes: voteClickNum,
   });
@@ -42,7 +43,7 @@ export const getCommentsById = (article_id) => {
       return data.comments;
     });
 };
-export const addCommentToArticle = (article_id, newComment) => {
+export const addComment = (article_id, newComment) => {
   return articlesApi
     .post(`/articles/${article_id}/comments`, {
       username: newComment.author,
@@ -53,7 +54,6 @@ export const addCommentToArticle = (article_id, newComment) => {
     });
 };
 
-
 export const deleteComment = (comment_id) => {
-	return articlesApi.delete(`/comments/${comment_id}`);
+  return articlesApi.delete(`/comments/${comment_id}`);
 };

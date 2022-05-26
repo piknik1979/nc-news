@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { UserContext } from '../App';
 import { formatDate } from '../utils/utils';
-import { addCommentToArticle, getCommentsById, deleteComment } from '../utils/api';
+import { addComment, getCommentsById, deleteComment } from '../utils/api';
 import '../css/comments.css';
 
 const Comments = ({ article_id }) => {
@@ -43,7 +43,7 @@ const Comments = ({ article_id }) => {
 			return [commentToAdd, ...currComments];
 		});
 
-		addCommentToArticle(article_id, newComment).catch((err) => {
+		addComment(article_id, newComment).catch((err) => {
 			console.log(err.response.data.msg);
 		});
 

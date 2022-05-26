@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { getArticleById, patchIncDecVote } from '../utils/api';
+import { changeVote, getArticleById} from '../utils/api';
 import { formatDate } from '../utils/utils';
 import '../index.css';
 import Comments from './Comments';
@@ -16,12 +16,12 @@ const Article = () => {
 	const handleVote = (article_id) => {
 		if (voteClickNum === 0) {
 			setVoteClickNum((currVote) => currVote + 1);
-			patchIncDecVote(article_id, voteClickNum + 1).catch((err) => {
+			changeVote(article_id, voteClickNum + 1).catch((err) => {
 				setVoteClickNum((currVote) => currVote - 1);
 			});
 		} else {
 			setVoteClickNum((currVote) => currVote - 1);
-			patchIncDecVote(article_id, voteClickNum - 2);
+			changeVote(article_id, voteClickNum - 2);
 		}
 	};
 
