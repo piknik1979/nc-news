@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import Single_Article from './Single_Article';
+import Card from './Card';
 import { getArticles } from '../utils/api';
 import { useParams } from 'react-router-dom';
 // import '../css/comments.css'
@@ -45,7 +45,7 @@ const Articles = () => {
 				{articles.map((article) => {
 					return (
 						<li className='singleArticle' key={article.article_id}>
-							<Single_Article article={article}></Single_Article>
+							<Card article={article}></Card>
 						</li>
 					);
 				})}
