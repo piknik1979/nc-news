@@ -43,7 +43,14 @@ const Comments = ({ article_id }) => {
 			return [commentToAdd, ...currComments];
 		});
 
-		addComment(article_id, newComment).catch((err) => {
+		addComment(article_id, newComment)
+		.then(({ comment }) => {
+			setComments((currComments) => {
+				const currCommentsCopy = [...currComments];
+				currCommentsCopy[0].comment_id = comment.comment_id;
+				return currCommentsCopy;
+			});
+		}).catch((err) => {
 			console.log(err.response.data.msg);
 		});
 
@@ -53,9 +60,7 @@ const Comments = ({ article_id }) => {
 	useEffect(() => {
 		getCommentsById(article_id).then((commentsFromApi) => {
 			setComments(commentsFromApi);
-			console.log(comments[0]);
 		});
-	// eslint-disable-next-line
 	}, [article_id]);
 
 	return (
