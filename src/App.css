@@ -1,11 +1,11 @@
 .App {
-  text-align: center;
+  text-align: right;
   display: flex;
   flex-direction: column;
 }
 
 h1 {
-color: rgb(68, 0, 255);
+color: rgb(84, 45, 192);
 }
 
 .App-logo {
@@ -19,7 +19,7 @@ color: rgb(68, 0, 255);
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -28,7 +28,7 @@ color: rgb(68, 0, 255);
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: #61dafb;
@@ -44,33 +44,33 @@ color: rgb(68, 0, 255);
 }
 
 body {
-  background-color: #cdd3d4;
+  background-color: #d0d2d2;
 }
 main {
-  max-width: 1024px;
+  max-width: 1080px;
   display: flex;
   margin: 0 auto;
 }
 
 .nav {
-  background-color: aqua;
-}
+  background-color: rgb(76, 128, 128);
+} */
 
 ul {
-  
   list-style-type: none;
   max-width: 800px;
   max-height: 30px;
   align-items: center;
-}
 
-@media only screen and (min-width: 768px) {
+} 
+
+ @media only screen and (min-width: 768px) {
   .App {
     flex-direction: column;
     align-items: center;
   }
 }
 
-/* .Articles {
+.Articles {
   display: flex;
-} */
+}

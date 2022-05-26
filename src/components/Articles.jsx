@@ -1,36 +1,57 @@
 import { useEffect, useState } from 'react';
+import ArticleCard from './ArticleCard';
+import { getArticles } from '../utils/api';
 import { useParams } from 'react-router-dom';
-import { getArticles, getArticlesByTopics } from '../utils/api';
-// import { Link } from 'react-router-dom';
+// import '../css/comments.css'
 
-const Articles = ()=> {
-    const [articles,setArticles] = useState ([]);
-    const { topic } = useParams;
-    useEffect(() => {
-          getArticlesByTopics(topic).then((articlesFromApi) => {
-            setArticles(articlesFromApi)
-        })
-    },[])
+const Articles = () => {
+	const [articles, setArticles] = useState([]);
+	const [isLoading, setIsLoading] = useState(true);
+	const [order, setOrder] = useState('desc');
+	const [filter, setFilter] = useState('created_at');
+	const { topic } = useParams();
+	const filters = ['created at', 'comment count', 'votes']
 
-return (
-    <section className="Articles">
-      <h1>Articles</h1>
-      <ul className="Artciles_list">
-        {articles.map((article) => {
-              console.log(article.article_id)
-          const { article_id, title, author, votes, comment_count } = article;
-          return (
-            <li key={article_id}>
-              <h2>{title}</h2>
-              <p>
-                Written by: {author} Votes: {votes} Comments: {comment_count}
-              </p>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
-  );
+	useEffect(() => {
+		getArticles(topic, filter, order).then((articlesFromApi) => {
+			setArticles(articlesFromApi);
+			setIsLoading(false);
+		});
+	}, [topic, filter, order]);
+
+	if (isLoading) {
+		return <p>Loading</p>;
+	}
+	
+	return (
+		<>
+			<form>  
+				<select name='filter' value={filter} onChange={(event) => setFilter(event.target.value)}>
+				
+					{filters.map((filter) => {
+						return (
+							<option key={filter} value={filter}>
+								{filter}
+							</option>
+						);
+					})}
+				</select>
+				<select name='order' value={order} onChange={(event) => setOrder(event.target.value)}>
+					<option value='desc'>descending</option>
+					<option value='asc'>asending</option>
+				</select>
+			</form>
+			<ul className='articles'>
+				{articles.map((article) => {
+					return (
+						<li className='article-card' key={article.article_id}>
+							<ArticleCard article={article}></ArticleCard>
+						</li>
+					);
+				})}
+			</ul>
+		</>
+	);
 };
 
 

@@ -1,0 +1,42 @@
+
+.comments {
+    margin-top: 2em;
+  }
+  
+  .comment{
+    padding:1em;
+    border-top: 1px solid #dedede;
+  }
+  .count-num {
+    display: inline-block;
+    margin-left: .3em;
+    color: #19be42;
+  }
+  .comment-author, .comment-date{
+  font-size: .9em;
+  }
+  
+  .comment-date {
+    margin-left: .8em;
+    color: #9b9393;
+  }
+  .comment-body {
+    margin-top: 1em;
+  }
+
+  form{
+    padding: 1em;
+    overflow: hidden;
+    }
+  form textarea {
+    padding: 1em;
+    box-sizing: content-box;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 80%;
+    height: 6em;
+    resize: none;
+  }
+
+  form button {
+    float: right;
+  }
