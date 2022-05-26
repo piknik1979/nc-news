@@ -1,7 +1,6 @@
+import { Link } from 'react-router-dom';
+
 const Header = () => {
-	return (
-	<h1>NC news</h1>
-	)
-	
+	return <Link className='header' to='/'>PIKNIK NEWS</Link>;
 };
 export default Header;
