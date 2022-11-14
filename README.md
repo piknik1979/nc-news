@@ -10,7 +10,6 @@
 ## About The Project
 This project is the front-end component to a news website that allows posting and deleting comments, voting for favourite comments and articles, and filtering articles by topic.
 
--- PLEASE NOTE THIS PROJECT IS STILL A WORK IN PROGRESS --
 ### Built With
 
 * [React.js](https://reactjs.org/)
